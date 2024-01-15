@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -81,10 +82,16 @@ fun ComposeMainActivity(modifier: Modifier = Modifier) {
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.SpaceAround
         ) {
-            Button(onClick = { /*TODO*/ }, modifier = Modifier.width(128.dp)) {
+            OutlinedButton(
+                onClick = { counter = previousArtwork(counter) },
+                modifier = Modifier.width(128.dp)
+            ) {
                 Text(text = stringResource(R.string.previous_button))
             }
-            Button(onClick = { /*TODO*/ }, modifier = Modifier.width(128.dp)) {
+            Button(
+                onClick = { counter = nextArtwork(counter) },
+                modifier = Modifier.width(128.dp)
+            ) {
                 Text(text = stringResource(R.string.next_button))
             }
         }
@@ -166,6 +173,33 @@ fun ArtworkPresentation(counter: Int, modifier: Modifier = Modifier) {
         fontSize = 16.sp,
         textAlign = TextAlign.Center
     )
+}
+
+
+private fun previousArtwork(current: Int): Int {
+    var counter = current
+
+    if (counter < 1 || counter > 5)
+        throw Exception("Invalid counter value. Allowed values are from 1 to 5.")
+
+    if (counter == 1)
+        return 5
+
+    counter--
+    return counter
+}
+
+private fun nextArtwork(current: Int): Int {
+    var counter = current
+
+    if (counter < 1 || counter > 5)
+        throw Exception("Invalid counter value. Allowed values are from 1 to 5.")
+
+    if (counter == 5)
+        return 1
+
+    counter++
+    return counter
 }
 
 
