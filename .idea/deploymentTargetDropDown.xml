@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="app">
+        <State />
+      </entry>
+      <entry key="nextArtwork_from1to2_checkArtwork()">
+        <State />
+      </entry>
+      <entry key="nextArtwork_from1to5to1_checkTitle()">
+        <State />
+      </entry>
+      <entry key="previousArtwork_from1to5_checkArtwork()">
+        <State />
+      </entry>
+      <entry key="previousArtwork_from3to2_checkArtwork()">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>
