@@ -3,6 +3,7 @@ package com.example.artspace
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -56,9 +57,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ComposeMainActivity(modifier: Modifier = Modifier) {
-    var counter by remember { mutableStateOf(4) }
-
-
+    var counter by remember { mutableStateOf(1) }
 
     Column(
         modifier = modifier
@@ -175,8 +174,8 @@ fun ArtworkPresentation(counter: Int, modifier: Modifier = Modifier) {
     )
 }
 
-
-private fun previousArtwork(current: Int): Int {
+@VisibleForTesting
+internal fun previousArtwork(current: Int): Int {
     var counter = current
 
     if (counter < 1 || counter > 5)
@@ -189,7 +188,8 @@ private fun previousArtwork(current: Int): Int {
     return counter
 }
 
-private fun nextArtwork(current: Int): Int {
+@VisibleForTesting
+internal fun nextArtwork(current: Int): Int {
     var counter = current
 
     if (counter < 1 || counter > 5)
