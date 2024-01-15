@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -81,7 +82,7 @@ fun ComposeMainActivity(modifier: Modifier = Modifier) {
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.SpaceAround
         ) {
-            Button(
+            OutlinedButton(
                 onClick = { counter = previousArtwork(counter) },
                 modifier = Modifier.width(128.dp)
             ) {
