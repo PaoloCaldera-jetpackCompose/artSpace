@@ -3,9 +3,14 @@ package com.example.artspace
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -87,6 +92,27 @@ fun ComposeMainActivity(modifier: Modifier = Modifier) {
         else -> throw Exception("Invalid counter value. Allowed values are from 1 to 5.")
     }
 
+    Column {
+        ArtworkPresentation(artwork = artwork)
+
+        Row {
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = stringResource(R.string.previous_button))
+            }
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = stringResource(R.string.next_button))
+            }
+        }
+    }
+
+}
+
+
+@Composable
+fun ArtworkPresentation(artwork: Artwork, modifier: Modifier = Modifier) {
+    Image(painter = artwork.image, contentDescription = artwork.contentDescription)
+    Text(text = artwork.title)
+    Text(text = stringResource(R.string.artist_and_year, artwork.artist, artwork.year))
 }
 
 

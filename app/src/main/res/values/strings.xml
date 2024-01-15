@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">ArtSpace</string>
+    <string name="artist_and_year">%s, %s</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
 
     <!-- Monna Lisa -->
     <string name="content_description_1">Image of the painting: Monna Lisa</string>
