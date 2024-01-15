@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">ArtSpace</string>
+
+    <!-- Monna Lisa -->
+    <string name="content_description_1">Image of the painting: Monna Lisa</string>
+    <string name="title_1">Monna Lisa</string>
+    <string name="artist_1">Leonardo da Vinci</string>
+    <string name="year_1">1503</string>
+
+    <!-- Ultima Cena -->
+    <string name="content_description_2">Image of the painting: Ultima Cena</string>
+    <string name="title_2">Ultima Cena</string>
+    <string name="artist_2">Leonardo da Vinci</string>
+    <string name="year_2">1498</string>
+
+    <!-- Primavera -->
+    <string name="content_description_3">Image of the painting: Primavera</string>
+    <string name="title_3">Primavera</string>
+    <string name="artist_3">Sandro Botticelli</string>
+    <string name="year_3">1480</string>
+
+    <!-- Bal du Moulin de La Galette -->
+    <string name="content_description_4">Image of the painting: Bal du Moulin de La Galette</string>
+    <string name="title_4">Bal du Moulin de La Galette</string>
+    <string name="artist_4">Pierre-Auguste Renoir</string>
+    <string name="year_4">1876</string>
+
+    <!-- De Sterrennacht -->
+    <string name="content_description_5">Image of the painting: De Sterrennacht</string>
+    <string name="title_5">De Sterrennacht</string>
+    <string name="artist_5">Vincent Van Gogh</string>
+    <string name="year_5">1889</string>
 </resources>
