@@ -3,17 +3,21 @@ package com.example.artspace
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -56,9 +60,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ComposeMainActivity(modifier: Modifier = Modifier) {
-    var counter by remember { mutableStateOf(4) }
-
-
+    var counter by remember { mutableStateOf(1) }
 
     Column(
         modifier = modifier
@@ -68,7 +70,9 @@ fun ComposeMainActivity(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
-            modifier = modifier.weight(5f),
+            modifier = modifier
+                .weight(5f)
+                .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -155,7 +159,7 @@ fun ArtworkPresentation(counter: Int, modifier: Modifier = Modifier) {
             modifier = modifier
                 .padding(32.dp)
                 .aspectRatio(artwork.image.intrinsicSize.width / artwork.image.intrinsicSize.height)
-                .fillMaxWidth()
+                .fillMaxHeight()
         )
     }
 
@@ -175,8 +179,8 @@ fun ArtworkPresentation(counter: Int, modifier: Modifier = Modifier) {
     )
 }
 
-
-private fun previousArtwork(current: Int): Int {
+@VisibleForTesting
+internal fun previousArtwork(current: Int): Int {
     var counter = current
 
     if (counter < 1 || counter > 5)
@@ -189,7 +193,8 @@ private fun previousArtwork(current: Int): Int {
     return counter
 }
 
-private fun nextArtwork(current: Int): Int {
+@VisibleForTesting
+internal fun nextArtwork(current: Int): Int {
     var counter = current
 
     if (counter < 1 || counter > 5)
