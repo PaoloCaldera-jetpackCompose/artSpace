@@ -9,14 +9,14 @@ The project demonstrates the ability to understand layout recomposition and stat
 
 The project consists of just one screen whose layout is developed through Jetpack Compose. User interaction is handled via layout recomposition.
 
-Visit the [Wiki](https://github.com/PaoloCaldera-jetpackCompose/artSpace/wiki) to see the application screens.
+Visit the [Wiki](https://github.com/PaoloCaldera/artSpace/wiki) to see the application screens.
 
 
 ## Getting Started
 
 To clone the repository, use the command
 ```
-$ git clone https://github.com/PaoloCaldera-jetpackCompose/artSpace.git
+$ git clone https://github.com/PaoloCaldera/artSpace.git
 ```
 or the `Get from VCS` option inside Android Studio by copying the link above.
 
